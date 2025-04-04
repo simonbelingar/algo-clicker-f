@@ -1,5 +1,7 @@
 this is hacked together code only meant to showcase a POC
 
+PLAY DEMO HERE: https://algo-clicker.vercel.app/
+
 req:
 npm init -y 
 webpack-cli --save-dev

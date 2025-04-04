@@ -19,14 +19,14 @@ body{
 	border: none;
 	background-color:#FFFFFF;
 	
-	transition: box-shadow 0.1s, background-color 0.1s;
+	transition: box-shadow 0s, background-color 0s;
 }
 .button:hover, .clicker:hover{
 	box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.3), 0 17px 17px 0 rgba(15, 15, 15, 0.15);/*shadow*/
 }
 .button:active, .clicker:active{
 	/*Shadow, color transition*/
-	transition: box-shadow 0.15s, background-color 0.1s;
+	transition: box-shadow 0.15s, background-color 0s;
 	box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.3), 0 20px 20px 0 rgba(0, 0, 0, 0.15);
 	background-color:#F0F0F0;
 }
@@ -49,14 +49,14 @@ body{
 	position: absolute;
 	top: 50%; left: 50%;
 	transform: translate(-50%, -50%); 
-	transition: width 0.1s, height 0.1s;
+	transition: width 0s, height 0s;
 }
 .clicker:hover {
 	width:200px;
 	height:200px;
 }
 .clicker:active {
-	transition: width 0.05s, height 0.05s;
+	transition: width 0s, height 0s;
 	width:225px;
 	height:225px;
 }
@@ -81,4 +81,11 @@ body{
 p span{
 	display: block;;
 	font-size: 25;
+}
+
+/*prevent teh annoying zoom in on mobile browsers*/
+* {
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+	touch-action: manipulation;
 }
