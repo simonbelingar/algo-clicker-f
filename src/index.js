@@ -2,11 +2,11 @@
 import algosdk from 'algosdk';
 import { PeraWalletConnect } from "@perawallet/connect";
 
+//replace with your wallet of choice for the prize wallet
 var escrowAccount = "BCR4TCL6BUJB7H2KTOVVJCGT7SOH7V2RUOM6QYPZM6KOSTUJIPHHOSUEK4";
 
 var myAccount = algosdk.generateAccount();
 var mnemonic = algosdk.secretKeyToMnemonic(myAccount.sk);
-
 
 //console.log("My address: %s", myAccount.addr);
 /*
@@ -109,9 +109,12 @@ function handleDisconnectWalletClick(event) {
 
 const SendTestNew = async function(increment){
     let params = await algodclient.getTransactionParams().do();
+var senderaddr = myAccount.addr;
+
+
     let txn = algosdk.makePaymentTxnWithSuggestedParamsFromObject({
         sender:myAccount.addr,
-        receiver: escrowAccount.addr,
+        receiver: escrowAccount,
         amount:fixedfee+increment,
         suggestedParams:params,
     });
@@ -214,9 +217,9 @@ const hotwalletCleanup = async function() {
   let params = await algodclient.getTransactionParams().do();
   let txn = algosdk.makePaymentTxnWithSuggestedParamsFromObject({
     sender:myAccount.addr,
-    receiver: escrowAccount.addr,
+    receiver: escrowAccount,
     amount:0,
-    closeRemainderTo: escrowAccount.addr,
+    closeRemainderTo: escrowAccount,
     suggestedParams:params,
   });
   let signedTxn = txn.signTxn(myAccount.sk);

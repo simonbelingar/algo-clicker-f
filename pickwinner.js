@@ -19,7 +19,6 @@ var bodydata = JSON.parse(res.getBody('utf8'));
 
 var participants = [];
 
- 
 for(let i = 0; i < bodydata.transactions.length ;i++){
     var entry = bodydata.transactions[i];
 
