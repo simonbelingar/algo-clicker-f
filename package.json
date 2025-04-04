@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "@blockshake/defly-connect": "^1.2.1",
+    "@perawallet/connect": "^1.4.2",
+    "@txnlab/use-wallet": "^4.0.1",
+    "algoclicker": "file:",
+    "algokit": "^0.0.1",
+    "algosdk": "^3.2.0",
+    "browserify": "^17.0.1",
+    "embedded-algo-wallet": "^0.0.1",
+    "lute-connect": "^1.5.1",
+    "sync-request": "^6.1.0",
+    "webpack": "^5.98.0"
+  },
+  "name": "algoclicker",
+  "version": "1.0.0",
+  "description": "- to participate you need to fund the hotwallet that's created for you - do the clicker game, for each tap it will txns to prize address on your behalf - when game finishes, remainder of algos in hotwallet gets closed back to your account - you only get one try per day per wallet - thats it :D",
+  "main": "index.js",
+  "devDependencies": {
+    "webpack-cli": "^6.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
