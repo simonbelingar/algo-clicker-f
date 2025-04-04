@@ -6,7 +6,7 @@ body{
 .container {
 	position: relative;
 	text-align: center;
-	height:50%;
+	height:70%;
 }
 
 .button, .clicker {
@@ -74,8 +74,7 @@ body{
 #timertext {
 	text-align: center;
 	margin:0px;
-	padding-top: 50px;
-	font-size: 50;
+	font-size: 30;
 }
 
 p span{

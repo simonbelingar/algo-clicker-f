@@ -126,7 +126,10 @@ var senderaddr = myAccount.addr;
 var score = 0;
 
 function addScore() { // onClicker pressed add ClickGain
-    score = score + 1;
+    //lil prevention for score update after time is up
+    if(countdown > 0){
+      score = score + 1;
+    }
   }
 
 function updateScore(check=true) {//update html score txt
