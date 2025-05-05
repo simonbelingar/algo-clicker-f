@@ -7,14 +7,25 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body>
+	<div id="infopanel"><p>The goal of the game is to make as many clicks/taps on the Algorand icon as possible within the 7 second interval.</p>
+		<p>To play you need to connect your Pera wallet by using the button in the bottom of the screen.</p>
+		<p>Afterwards you need to pay a 0.2 Algo fee by using the "new attempt" button in the bottom of the screen.</p>
+		<p>Upon successfull payment, you start the gaame and the 7 second timer by tapping on the Algorand icon in teh center of the screen.</p>
+		<p>Each click is one entry in the raffle and is also recorded as a transaction on the algorand network.</p>
+		<p>To play again, simply refresh the page and repeat the process. Total sum of all your attempts will be counted in the raffle.</p>
+		<p>Raffle is done on each 1st day of the month and the prize pool is 90% of all tickets paid with 10% being rolled over to next months raffle.</p>
+
+	</p></div>
 	<p id="scoretext" class="score-text">0</p>
 	<div class ="container">
 		<button id="main-clicker" disabled class="clicker">
 			<img id="logo-clicker" src="algo.png" draggable=false class="clicker"/>
 		</button>
-		<p id="timertext" class="score-text"></p>
+		<p id="timertext" class="score-text">Start by Connecting your pera wallet</p>
 	</div>
 	<button id="b1" class="button" disabled><b></b>New Attempt(0.2A)</button>
+
+	<button id="info"></button>
 
 	<script src="main.js"></script>
 	<script src="331.js"></script>

@@ -27,12 +27,14 @@ let algodclient = new algosdk.Algodv2(algodToken, algodServer, algodPort);
 //set the fixed ammount per click to be sent
 //increase ticket price if you're gonna increase this one, as .1 algo is reserved
 const fixedfee = 0;
+const ticketPrice = 200000;
 
 var clicker  = document.getElementById("main-clicker");
 var scoretext    = document.getElementById("scoretext");
 var timertext    = document.getElementById("timertext");
 var interval;
 var countdown = 7;
+
 
 const attemptBtn = document.getElementById("b1");
 
@@ -83,7 +85,8 @@ function handleConnectWalletClick(event) {
       console.log("accaddr:"+accountAddress);
 
       connectButton.innerHTML = "Disconnect "+accountAddress.substring(0,3)+"...";
-      console.log("enable b1");
+      //console.log("enable b1");
+      timertext.innerHTML = "Purchase new attempt";
       attemptBtn.disabled = false;
 
     })
@@ -138,14 +141,15 @@ function updateScore(check=true) {//update html score txt
 }
 
 function TimerShow(){
-  let text = 'Start by clicking on the logo<span>you\'ll have 7 seconds to click as many times as possible</span>';
+  let text = 'Start by clicking on the logo<span>you will have 7 seconds to click as many times as possible</span>';
   timertext.innerHTML = text;
   clicker.disabled = false;
 }
 
 function GameEnd(){
-  let text = 'GG';
+  let text = 'Total tickets earned: '+score;
   timertext.innerHTML = text;
+  clicker.disabled = true;
 }
 
 
@@ -155,12 +159,12 @@ function TimerStart(){
 }
 
 function timerUpdate(countdown) {
-  let text = "." + countdown;
+  let text = "Time left: " + countdown+"s";
   timertext.innerHTML = text;
 
   clearInterval(interval);
   if(countdown == 0){
-    console.log("timer donw");
+    //console.log("timer done");
     GameEnd();
     hotwalletCleanup();
     return;
@@ -191,7 +195,7 @@ const handleperatx = async function(signeraddress){
     const fundtx = algosdk.makePaymentTxnWithSuggestedParamsFromObject({
         sender: signeraddress,
         receiver:myAccount.addr,
-        amount: 200000,
+        amount: ticketPrice,
         suggestedParams: params,
     });
     console.log("txn prepared -> from"+signeraddress+" to"+myAccount.addr);
@@ -229,3 +233,15 @@ const hotwalletCleanup = async function() {
   let txId = txn.txID().toString();
   await algodclient.sendRawTransaction(signedTxn).do();
 }
+
+//information popup
+
+const info = document.getElementById("info");
+info.addEventListener("click", (event) => {
+  var x = document.getElementById("infopanel");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+});

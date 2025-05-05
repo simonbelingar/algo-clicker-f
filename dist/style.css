@@ -1,6 +1,8 @@
 body{
 	background: rgb(15,232,146);
 	background: radial-gradient(circle, rgba(15,232,146,1) 0%, rgba(11,186,131,1) 31%, rgba(8,129,153,1) 100%);
+	padding: 0px;
+	margin:0px;
 }
 
 .container {
@@ -81,6 +83,35 @@ p span{
 	display: block;;
 	font-size: 25;
 }
+
+#info {
+	position:absolute;
+	display: block;
+	top:10px;
+	right:10px;
+	width:60px;
+	height:60px;
+	border: none;
+    background: url('info.png') ;
+	background-size:contain;
+	z-index: 999;
+}
+#infopanel{
+	position: absolute;
+	display: none;
+	height: 100%;
+	width:100%;
+	padding-top:100px;
+	background-color: lightgrey;
+	z-index: 998;
+}
+#infopanel p{
+	padding-left: 30px;
+	padding-right: 30px;
+	text-align: center;
+}
+
+
 
 /*prevent teh annoying zoom in on mobile browsers*/
 * {
